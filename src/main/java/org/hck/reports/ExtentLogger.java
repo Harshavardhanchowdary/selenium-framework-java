@@ -46,7 +46,7 @@ public final class ExtentLogger {
     /**
      * Logs message to extent with PASS Status along with the base64 image. <br>If <code>captureScreenShot==true</code> and <code>ConfigProperties.PASSEDSTEPSSCREENSHOTS == true</code>.
      *
-     * @param message           Message to be logged.
+     * @param message message to be logged.
      * @param captureScreenShot if <code>true</code> base64 image will be captured. else no image will be captured.
      * @see ScreenShotUtil#getBase64Image()
      * @see ConfigProperties

@@ -5,7 +5,8 @@ import org.hck.utils.PropertyFileUtil;
 
 /**
  * FrameworkConstants class holds all the contents required to for the framework.
- *  Ex: Test Resources path, PropertyFiles, Drivers, Timeouts
+ * Ex: Test Resources path, PropertyFiles, Drivers, Timeouts
+ *
  * @author Harshavardhan Kavuri
  * @version 1.0
  * @since 1.0
@@ -21,6 +22,11 @@ public final class FrameworkConstants {
      * Holds path to ChromeDriver executable.
      */
     private static final String CHROME_DRIVER_PATH = TEST_RESOURCES_ROOT_PATH + "/executables/chromedriver";
+    /**
+     * Holds path to ChromeDriver executable.
+     */
+    private static final String GECKO_DRIVER_PATH = TEST_RESOURCES_ROOT_PATH + "/executables/geckodriver";
+
     /**
      * Holds path to testing properties file.
      */
@@ -41,6 +47,7 @@ public final class FrameworkConstants {
     private static final String EXTENT_REPORTS_PATH = System.getProperty("user.dir") + "/extent-test-output";
 
     private static String EXTENT_REPORT_FILE_PATH = "";
+
     /**
      * Singleton classes-prevent class instances being created in any place other than this very class.
      */
@@ -69,7 +76,9 @@ public final class FrameworkConstants {
      *
      * @return Test Data file path.
      */
-    public static String getTestDataFilePath() { return TEST_DATA_FILE_PATH; }
+    public static String getTestDataFilePath() {
+        return TEST_DATA_FILE_PATH;
+    }
 
     /**
      * Returns explicit wait time in seconds.
@@ -87,6 +96,15 @@ public final class FrameworkConstants {
      */
     public static String getChromeDriverPath() {
         return CHROME_DRIVER_PATH;
+    }
+
+    /**
+     * Returns the firefox driver executable path.
+     *
+     * @return firefox executable path.
+     */
+    public static String getGeckoDriverPath() {
+        return GECKO_DRIVER_PATH;
     }
 
     /**

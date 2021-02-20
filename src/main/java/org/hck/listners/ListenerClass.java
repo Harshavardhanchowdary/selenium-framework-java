@@ -1,10 +1,12 @@
 package org.hck.listners;
 
+import org.hck.annotations.FrameworkAnnotation;
 import org.hck.reports.ExtentLogger;
 import org.hck.reports.ExtentReport;
 import org.testng.*;
 
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Objects;
 
 public class ListenerClass implements ITestListener, ISuiteListener {
@@ -29,6 +31,17 @@ public class ListenerClass implements ITestListener, ISuiteListener {
         } else {
             ExtentReport.createTest(result.getMethod().getDescription());
         }
+
+        ExtentReport.addAuthors(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).author());
+        ExtentReport.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).category());
+        gerDevice(result.getParameters());
+        ExtentReport.addBrowser(gerDevice(result.getParameters()).toUpperCase());
+
+    }
+
+    private String gerDevice(Object[] obj){
+        Map<String, String> map = (Map<String, String>)obj[0];
+        return map.get("browser");
     }
 
 

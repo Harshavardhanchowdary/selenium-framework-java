@@ -5,6 +5,7 @@
 <listener class-name="org.hck.listners.ExecutionListener"/>
         <listener class-name="org.hck.listners.ListenerClass"/>
         <listener class-name="org.hck.listners.MethodInterceptor"/>
+        <listener class-name="org.hck.listners.AnnotationTransformer"/>
     </listeners>
     <test verbose="2"
           name="Login Tests">
